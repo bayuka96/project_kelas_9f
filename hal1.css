@@ -1,0 +1,114 @@
+/* Reset dan Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animasi Layar Berkedip */
+#flash-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: flash 1.5s ease-in-out 3;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+    font-family: arial black, sans-serif;
+}
+
+@keyframes flash {
+    0%, 100% { background: black; color: white; }
+    50% { background: white; color: black; }
+}
+
+
+/* Halaman 1 */
+.page {
+    background-color: #d3d3d3; /* Warna abu-abu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.title {
+    font-size: 2em;
+    color: black; /* Menggunakan nama warna LemonChiffon */
+    font-family: 'Arial Black', Arial, sans-serif; /* Menggunakan Arial Black */
+    margin-bottom: 20px;
+}
+
+
+/* Slider Gambar */
+.image-slider {
+    display: flex;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.slider-image {
+    width: 100%;
+    animation: slide 15s infinite linear;
+    border: 5px solid black; /* Menambahkan border hitam sebagai figura */
+    box-sizing: border-box; /* Agar border tidak mengubah ukuran gambar */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
+/* Bola Animasi */
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-200px); }
+}
+
+/* Tombol Menuju Halaman 2 */
+.to-page2 {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+

@@ -1,0 +1,106 @@
+/* Halaman 2 */
+#page2 {
+    position: relative;
+    height: 100vh;
+}
+
+/* Background Video */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Cinematic Slider Container */
+.cinematic-slider {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* Box Gambar */
+.image-box {
+    width: 250px; /* Ukuran kotak gambar */
+    height: 350px; /* Menambah tinggi kotak */
+    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px; /* Jarak antar kotak */
+    opacity: 0;
+    transform: translateY(100%); /* Mulai dari bawah */
+    animation: boxBounce 4s ease-out infinite; /* Durasi animasi lebih lama */
+}
+
+/* Gambar di dalam Kotak */
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Keterangan Gambar */
+.image-box p {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Animasi Kotak Muncul dan Memantul (Bounce) secara Lambat */
+@keyframes boxBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(100%); /* Mulai dari bawah */
+    }
+    25% {
+        transform: translateY(-40%); /* Lompatan pertama (lebih tinggi) */
+    }
+    50% {
+        transform: translateY(20%); /* Lompatan kedua (sedikit turun) */
+    }
+    75% {
+        transform: translateY(-20%); /* Lompatan ketiga (kembali lebih tinggi) */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Posisi akhir */
+    }
+}
+
+/* Setiap kotak memiliki waktu animasi yang berbeda */
+.image-box:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.image-box:nth-child(2) {
+    animation-delay: 1.5s; /* Gambar 2 muncul sedikit lebih lambat */
+}
+
+.image-box:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.image-box:nth-child(4) {
+    animation-delay: 2.5s;
+}
+
+.image-box:nth-child(5) {
+    animation-delay: 3s;
+}
+
+.image-box:nth-child(6) {
+    animation-delay: 3.5s; /* Gambar 6 muncul paling akhir */
+}
