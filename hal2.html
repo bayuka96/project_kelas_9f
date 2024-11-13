@@ -1,64 +1,19 @@
-up<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floating Bubbles</title>
+    <title>Linked Parallelograms</title>
     <link rel="stylesheet" href="2.css">
 </head>
 <body>
-    <script>
-    const bubbles = document.querySelectorAll('.bubble');
-
-    function randomPosition() {
-        bubbles.forEach(bubble => {
-            bubble.style.top = `${Math.random() * window.innerHeight}px`;
-            bubble.style.left = `${Math.random() * window.innerWidth}px`;
-        });
-    }
-
-    function checkCollision(b1, b2) {
-        const rect1 = b1.getBoundingClientRect();
-        const rect2 = b2.getBoundingClientRect();
-        return !(
-            rect1.right < rect2.left ||
-            rect1.left > rect2.right ||
-            rect1.bottom < rect2.top ||
-            rect1.top > rect2.bottom
-        );
-    }
-
-    function updatePositions() {
-        bubbles.forEach(bubble => {
-            const dx = (Math.random() - 0.5) * 10;
-            const dy = (Math.random() - 0.5) * 10;
-            bubble.style.top = `${parseFloat(bubble.style.top) + dy}px`;
-            bubble.style.left = `${parseFloat(bubble.style.left) + dx}px`;
-        });
-        
-        for (let i = 0; i < bubbles.length; i++) {
-            for (let j = i + 1; j < bubbles.length; j++) {
-                if (checkCollision(bubbles[i], bubbles[j])) {
-                    bubbles[i].style.transform = 'translate(-10px, -10px)';
-                    bubbles[j].style.transform = 'translate(10px, 10px)';
-                }
-            }
-        }
-
-        requestAnimationFrame(updatePositions);
-    }
-
-    randomPosition();
-    updatePositions();
-</script>
-
-    <div class="bubble-container">
-        <div class="bubble"><a href="kejoraaa.blogspot.com"><img src="1.jpeg"></a></div>
-        <div class="bubble"><a href="#"><img src="21.jpeg" alt="Image 2"></a></div>
-        <div class="bubble"><a href="#"><img src="12.jpeg" alt="Image 3"></a></div>
-        <div class="bubble"><a href="#"><img src="2.jpeg" alt="Image 4"></a></div>
-        <div class="bubble"><a href="#"><img src="21.jpeg" alt="Image 5"></a></div>
-        <div class="bubble"><a href="#"><img src="12.jpeg" alt="Image 6"></a></div>
+    <div class="parallelogram-container">
+        <div class="parallelogram"><a href="#"><img src="1.jpeg" alt="Image 1"></a></div>
+        <div class="parallelogram"><a href="#"><img src="2.jpeg" alt="Image 2"></a></div>
+        <div class="parallelogram"><a href="#"><img src="1.jpeg" alt="Image 3"></a></div>
+        <div class="parallelogram"><a href="#"><img src="2.jpeg" alt="Image 4"></a></div>
+        <div class="parallelogram"><a href="#"><img src="2.jpeg" alt="Image 5"></a></div>
+        <div class="parallelogram"><a href="#"><img src="1.jpeg" alt="Image 6"></a></div>
     </div>
 </body>
 </html>
